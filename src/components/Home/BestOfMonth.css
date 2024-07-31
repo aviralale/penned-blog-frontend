@@ -1,0 +1,16 @@
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 200s linear infinite;
+}
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+}

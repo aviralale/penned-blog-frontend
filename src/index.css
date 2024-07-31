@@ -9,10 +9,23 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "ThunderHC";
+  src: url("./assets/fonts/Thunder-HC.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ThunderLC";
+  src: url("./assets/fonts/Thunder-LC.otf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   font-family: "Poppins", sans-serif;
   background: #f2f0e9;
+  line-height: normal;
 }
 
 * {
@@ -31,15 +44,19 @@ h1 {
   font-family: "Casta", "Times New Roman", Times, serif;
 }
 
-a {
-}
-
 a:hover {
   color: RGB(227, 107, 70);
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-.bebas-neue {
-  font-family: "Bebas Neue", sans-serif;
+.ThunderLC {
+  font-family: "ThunderLC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.ThunderHC {
+  font-family: "ThunderHC", sans-serif;
   font-weight: 400;
   font-style: normal;
 }

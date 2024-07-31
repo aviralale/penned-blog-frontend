@@ -4,10 +4,10 @@ import { ArrowUpRight03Icon } from "../../assets/icons/Icons";
 
 export default function Recent() {
   return (
-    <div className="bg-custom-bg-dark">
+    <div className="bg-custom-bg-dark pb-16">
       <div className="mx-6 ">
         <div className="flex justify-between items-baseline mb-6">
-          <h1 className="text-8xl text-custom-text-dark mt-4 font-extrabold">
+          <h1 className="text-8xl text-custom-text-dark mt-4 ThunderHC font-extrabold">
             RECENTS
           </h1>
           <Link

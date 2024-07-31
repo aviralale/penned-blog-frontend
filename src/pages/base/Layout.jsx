@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import NavbarOne from "../../components/NavbarOne";
 
@@ -7,6 +8,7 @@ export default function Layout({ children }) {
       <Navbar />
       <NavbarOne />
       <div className="flex place-items-center">{children}</div>
+      <Footer />
     </>
   );
 }

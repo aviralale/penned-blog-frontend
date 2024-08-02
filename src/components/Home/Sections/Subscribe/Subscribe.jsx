@@ -1,5 +1,5 @@
 import React from "react";
-import AuthorImg from "../../assets/images/author.png";
+import AuthorImg from "../../../../assets/images/author.png";
 
 export default function Subscribe() {
   return (

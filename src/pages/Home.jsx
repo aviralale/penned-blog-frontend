@@ -1,10 +1,9 @@
-import AllTimeBest from "../components/Home/AllTimeBest";
-import BestOfMonth from "../components/Home/BestOfMonth";
-import BlogByAuthor from "../components/Home/BlogByAuthor";
-import Hero from "../components/Home/Hero";
-import Popular from "../components/Home/Popular";
-import Recent from "../components/Home/Recent";
-import Subscribe from "../components/Home/Subscribe";
+import AllTimeBest from "../components/Home/Sections/AllTimeBest/AllTimeBest";
+import BestOfMonth from "../components/Home/Sections/BestOfMonth/BestOfMonth";
+import BlogByAuthor from "../components/Home/Sections/BlogByAuthor/BlogByAuthor";
+import Hero from "../components/Home/Sections/Hero/Hero";
+import Popular from "../components/Home/Sections/Popular/Popular";
+import Recent from "../components/Home/Sections/Recent/Recent";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <BestOfMonth />
       <BlogByAuthor />
       <AllTimeBest />
-      <Subscribe />
     </div>
   );
 }

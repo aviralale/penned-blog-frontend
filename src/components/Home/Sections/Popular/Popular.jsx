@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PopularCarousel from "./PopularCarousel";
-import { slides } from "./slides";
+import { slides } from "../../../../data/slides";
 
 export default function Popular() {
   const [currentSlide, setCurrentSlide] = useState(0);

@@ -1,5 +1,5 @@
 import React from "react";
-import AuthorImg from "../../assets/images/author.png";
+import AuthorImg from "../../../../assets/images/author.png";
 import { NavLink } from "react-router-dom";
 
 export default function BlogByAuthor() {
@@ -7,6 +7,7 @@ export default function BlogByAuthor() {
     `p-1 rounded-full ${
       isActive ? " bg-custom-orange" : "hover:bg-custom-orange"
     }`;
+
   return (
     <div className="bg-custom-bg-dark pb-16">
       <div className="mx-6 ">
@@ -17,7 +18,7 @@ export default function BlogByAuthor() {
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
             <NavLink
               className={getNavLinkClass}
-              to={`${item == 5 ? "" : `/date${item + 1}`}`}
+              to={`${item === 5 ? "" : `/date${item + 1}`}`}
               key={item}
             >
               <img
@@ -46,14 +47,14 @@ export default function BlogByAuthor() {
             <img
               src={AuthorImg}
               alt="author"
-              className=" aspect-[3/4] object-cover w-[42rem] h-[62rem] transform translate-x-56 -translate-y-72"
+              className="aspect-[3/4] object-cover w-[42rem] h-[62rem] transform translate-x-56 -translate-y-72"
             />
           </div>
-          <div className=" flex justify-between w-2/5">
+          <div className="flex justify-between w-2/5">
             <div className="flex flex-col gap-4">
               {[1, 2, 3].map((item) => (
-                <>
-                  <div key={item} className="flex gap-6">
+                <React.Fragment key={item}>
+                  <div className="flex gap-6">
                     <div className="h-full w-1/4">
                       <img
                         src={`https://images.unsplash.com/photo-1722104628969-6c7961f69b8f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&item=${item}`}
@@ -77,14 +78,14 @@ export default function BlogByAuthor() {
                         </h1>
                       </div>
                       <div>
-                        <p className=" text-custom-text-dark">
+                        <p className="text-custom-text-dark">
                           Written by <b>Aviral Ale</b>
                         </p>
                       </div>
                     </div>
                   </div>
-                  {item < 3 ? <hr className="p-4 w-full" /> : <></>}
-                </>
+                  {item < 3 ? <hr className="p-4 w-full" /> : null}
+                </React.Fragment>
               ))}
             </div>
           </div>

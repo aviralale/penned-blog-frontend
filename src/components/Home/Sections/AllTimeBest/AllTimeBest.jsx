@@ -1,7 +1,6 @@
 import React from "react";
-import Photo1 from "../../assets/images/Photo1.jpg";
+import Photo1 from "../../../../assets/images/Photo1.jpg";
 import { Link } from "react-router-dom";
-import { ArrowUpRight03Icon } from "../../assets/icons/Icons";
 export default function AllTimeBest() {
   return (
     <div className="flex flex-col justify-center items-center">

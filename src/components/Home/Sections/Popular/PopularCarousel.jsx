@@ -1,5 +1,8 @@
 import React from "react";
-import { ArrowLeft02Icon, ArrowRight02Icon } from "../../assets/icons/Icons";
+import {
+  ArrowLeft02Icon,
+  ArrowRight02Icon,
+} from "../../../../assets/icons/Icons";
 
 export default function PopularCarousel({
   img,

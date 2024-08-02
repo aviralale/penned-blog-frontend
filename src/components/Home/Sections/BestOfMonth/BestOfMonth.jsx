@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import { ArrowUpRight03Icon } from "../../assets/icons/Icons";
-import "./BestOfMonth.css";
+import { ArrowUpRight03Icon } from "../../../../assets/icons/Icons";
+import "./assets/BestOfMonth.css";
 import { Fragment } from "react";
 
 const repeatCount = 200;

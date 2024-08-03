@@ -50,7 +50,7 @@ export default function Category() {
             {[1, 2, 3].map((item) => (
               <>
                 <div key={item} className="flex gap-6 ">
-                  <Post imgHeight={8} textColor="black" />
+                  <Post hasImages={false} textColor="black" />
                 </div>
               </>
             ))}

@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Post(props) {
   return (
-    <>
-      <div className=" h-full flex">
-        <img
-          src={`https://images.unsplash.com/photo-1722104628969-6c7961f69b8f`}
-          className={`object-cover h-${
-            props.imgHeight ? props.imgHeight : 72
-          } aspect-square`}
-          alt=""
-        />
-      </div>
+    <Link className="flex gap-4">
+      {props.hasImages && (
+        <div className=" h-full flex">
+          <img
+            src={`https://images.unsplash.com/photo-1722104628969-6c7961f69b8f`}
+            className={`object-cover  aspect-square w-96`}
+            alt=""
+          />
+        </div>
+      )}
       <div className="flex flex-col gap-6">
         <div className="flex gap-6">
           <button
@@ -55,6 +56,6 @@ export default function Post(props) {
           </div>
         </div>
       </div>
-    </>
+    </Link>
   );
 }

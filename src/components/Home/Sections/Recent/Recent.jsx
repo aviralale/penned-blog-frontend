@@ -29,7 +29,7 @@ export default function Recent() {
             {[1, 2, 3].map((item) => (
               <>
                 <div key={item} className="flex ">
-                  <Post />
+                  <Post imgHeight={24} />
                 </div>
               </>
             ))}

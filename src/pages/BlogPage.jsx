@@ -7,6 +7,8 @@ import {
   NewTwitterIcon,
   Share08Icon,
 } from "../assets/icons/Icons";
+import Comments from "../components/BlogPage/Comment/Comments";
+import BlogRating from "../components/BlogPage/BlogRating";
 
 export default function BlogPage() {
   return (
@@ -110,6 +112,10 @@ export default function BlogPage() {
           "{individualBlog.blog.quotes[2].text}"
         </p>
         <span className="italic">- {individualBlog.blog.quotes[2].author}</span>
+      </div>
+      <div>
+        <BlogRating />
+        <Comments />
       </div>
     </div>
   );

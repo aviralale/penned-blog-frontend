@@ -12,7 +12,7 @@ import BlogRating from "../components/BlogPage/BlogRating";
 
 export default function BlogPage() {
   return (
-    <div className="px-2 flex flex-col gap-10 justify-center items-center my-5 w-[calc(100vw-1rem)]">
+    <article className="px-2 flex flex-col gap-10 justify-center items-center my-5 w-[calc(100vw-1rem)]">
       <div className=" w-full flex justify-between items-center">
         <div className="flex items-center gap-2">
           <ArrowLeft02Icon width={30} height={30} />
@@ -117,6 +117,6 @@ export default function BlogPage() {
         <BlogRating />
         <Comments />
       </div>
-    </div>
+    </article>
   );
 }

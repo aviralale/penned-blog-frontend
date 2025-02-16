@@ -1,6 +1,25 @@
+import { Eye, EyeClosed } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Signup() {
+  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isRePasswordVisible, setIsRePasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = (e) => {
+    e.preventDefault();
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  const toggleRePasswordVisibility = (e) => {
+    e.preventDefault();
+    setIsRePasswordVisible(!isRePasswordVisible);
+  };
   return (
     <div className="flex justify-center items-center w-full m-24">
       <div className="flex flex-col items-center">
@@ -13,7 +32,7 @@ export default function Signup() {
             <input
               type="text"
               placeholder="John Doe"
-              className=" p-2 border border-custom-bg-dark bg-transparent hover:outline-none active:outline-none focus:outline-none"
+              className=" p-2 border border-custom-bg-dark bg-transparent outline-none"
               required
               id="displayName"
             />
@@ -23,7 +42,7 @@ export default function Signup() {
             <input
               type="text"
               placeholder="johndoe"
-              className=" p-2 border border-custom-bg-dark bg-transparent hover:outline-none active:outline-none focus:outline-none"
+              className=" p-2 border border-custom-bg-dark bg-transparent outline-none"
               required
               id="username"
             />
@@ -33,28 +52,48 @@ export default function Signup() {
             <input
               type="email"
               placeholder="johndoe@example.com"
-              className=" p-2 border border-custom-bg-dark bg-transparent hover:outline-none active:outline-none focus:outline-none"
+              className=" p-2 border border-custom-bg-dark bg-transparent outline-none"
               required
               id="email"
             />
           </div>
           <div className="flex flex-col mt-2">
             <label htmlFor="password">Enter password</label>
-            <input
-              type="password"
-              className=" p-2 border border-custom-bg-dark bg-transparent hover:outline-none active:outline-none focus:outline-none"
-              required
-              id="password"
-            />
+            <div className="relative">
+              <input
+                type={isPasswordVisible ? "text" : "password"}
+                className=" p-2 border w-full border-custom-bg-dark bg-transparent outline-none"
+                required
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                className="absolute right-2 top-2"
+                onClick={togglePasswordVisibility}
+              >
+                {isPasswordVisible ? <EyeClosed /> : <Eye />}
+              </button>
+            </div>
           </div>
           <div className="flex flex-col mt-2">
             <label htmlFor="password">Repeat password</label>
-            <input
-              type="password"
-              className=" p-2 border border-custom-bg-dark bg-transparent hover:outline-none active:outline-none focus:outline-none"
-              required
-              id="password"
-            />
+            <div className="relative">
+              <input
+                type={isRePasswordVisible ? "text" : "password"}
+                className=" p-2 border w-full border-custom-bg-dark bg-transparent outline-none"
+                required
+                id="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              <button
+                className="absolute right-2 top-2"
+                onClick={toggleRePasswordVisibility}
+              >
+                {isRePasswordVisible ? <EyeClosed /> : <Eye />}
+              </button>
+            </div>
           </div>
           <button
             type="submit"

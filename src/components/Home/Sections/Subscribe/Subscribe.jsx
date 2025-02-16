@@ -16,7 +16,7 @@ export default function Subscribe() {
             <div className="flex items-center">
               <input
                 type="text"
-                className="h-[6.5rem] text-3xl bg-transparent border-t border-b hover:outline-none active:outline-none focus:outline-none"
+                className="h-[6.5rem] text-3xl bg-transparent border-t border-b outline-none"
                 placeholder="E-MAIL ADDRESS"
               />
               <button className="h-[6.5rem] text-3xl px-4  text-custom-orange  bg-custom-orange text-white">

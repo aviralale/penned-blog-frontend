@@ -3,7 +3,7 @@ import HeroImg from "../../../../assets/images/Hero.jpg";
 export default function Hero() {
   return (
     <div className="flex flex-col place-items-center relative w-full">
-      <div className="relative -z-10 flex">
+      <div className="relative flex">
         <h1 className="text-[40rem] text-custom-orange ThunderHC font-bold">
           PENNED
         </h1>

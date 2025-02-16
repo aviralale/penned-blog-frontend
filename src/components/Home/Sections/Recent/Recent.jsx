@@ -29,12 +29,12 @@ export default function Recent() {
             {[1, 2, 3].map((item) => (
               <>
                 <div key={item} className="flex ">
-                  <Post imgHeight={24} />
+                  <Post imgHeight={24} hasImages />
                 </div>
               </>
             ))}
           </div>
-          <div className="flex flex-col gap-8 flex-1">
+          <Link className="flex flex-col gap-8 flex-1">
             <div className=" h-full">
               <img
                 src="https://images.unsplash.com/photo-1722104628969-6c7961f69b8f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -55,7 +55,7 @@ export default function Recent() {
             <p className=" text-custom-text-dark">
               Written by <b>Aviral Ale</b>
             </p>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

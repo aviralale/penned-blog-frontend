@@ -1,6 +1,16 @@
+import { Eye, EyeClosed } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = (e) => {
+    e.preventDefault();
+    setIsPasswordVisible(!isPasswordVisible);
+  };
   return (
     <div className="flex justify-center items-center w-full m-24">
       <div className="flex flex-col items-center">
@@ -13,19 +23,31 @@ export default function Login() {
             <input
               type="text"
               placeholder="johndoe"
-              className=" p-2 border border-custom-bg-dark bg-transparent hover:outline-none active:outline-none focus:outline-none"
+              className=" p-2 border border-custom-bg-dark bg-transparent outline-none "
               required
               id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="flex flex-col mt-2">
             <label htmlFor="password">Enter password</label>
-            <input
-              type="password"
-              className=" p-2 border border-custom-bg-dark bg-transparent hover:outline-none active:outline-none focus:outline-none"
-              required
-              id="password"
-            />
+            <div className="relative">
+              <input
+                type={isPasswordVisible ? "text" : "password"}
+                className=" p-2 border w-full border-custom-bg-dark bg-transparent outline-none"
+                required
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                className="absolute right-2 top-2"
+                onClick={togglePasswordVisibility}
+              >
+                {isPasswordVisible ? <EyeClosed /> : <Eye />}
+              </button>
+            </div>
           </div>
           <button
             type="submit"

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="flex justify-between px-8 my-12">
+    <footer className="flex justify-between px-8 my-12">
       <div className="flex gap-8 items-start">
         <div className="flex flex-col">
           <h1 className="text-5xl ThunderLC">CATEGORIES</h1>
@@ -77,6 +77,6 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

@@ -37,6 +37,15 @@
   transition-timing-function: ease;
 }
 
+body {
+  background-size: 40px 40px;
+  background-image: radial-gradient(
+    circle,
+    #daaa0088 1px,
+    rgba(0, 0, 0, 0) 1px
+  );
+}
+
 h1 {
   font-family: "Casta", "Times New Roman", Times, serif;
 }

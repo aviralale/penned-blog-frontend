@@ -8,12 +8,24 @@ import Recent from "../components/Home/Sections/Recent/Recent";
 export default function Home() {
   return (
     <div className="flex flex-col w-full gap-16">
-      <Hero />
-      <Popular />
-      <Recent />
-      <BestOfMonth />
-      <BlogByAuthor />
-      <AllTimeBest />
+      <section>
+        <Hero />
+      </section>
+      <section>
+        <Popular />
+      </section>
+      <section>
+        <Recent />
+      </section>
+      <section>
+        <BestOfMonth />
+      </section>
+      <section>
+        <BlogByAuthor />
+      </section>
+      <section>
+        <AllTimeBest />
+      </section>
     </div>
   );
 }

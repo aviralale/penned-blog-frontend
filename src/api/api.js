@@ -5,7 +5,7 @@ const API_URL = "http://127.0.0.1:8000/api/";
 
 export const registerUser = async (user) => {
   try {
-    const response = await axios.post(`${API_URL}users/`, user);
+    const response = await axios.post(`${API_URL}auth/users/`, user);
     localStorage.setItem("email", response.data.email);
     return response;
   } catch (error) {
@@ -15,7 +15,7 @@ export const registerUser = async (user) => {
 
 export const loginUser = async (user) => {
   try {
-    const response = await axios.post(`${API_URL}users/jwt/create/`, user);
+    const response = await axios.post(`${API_URL}auth/jwt/create/`, user);
     localStorage.setItem("token", response.data.access);
     return response;
   } catch (error) {
@@ -25,7 +25,7 @@ export const loginUser = async (user) => {
 
 export const patchUser = async (user, token) => {
   try {
-    const response = await axios.patch(`${API_URL}users/me/`, user, {
+    const response = await axios.patch(`${API_URL}auth/users/me/`, user, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

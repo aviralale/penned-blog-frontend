@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import Footer from "../../components/Footer";
 import Subscribe from "../../components/Home/Sections/Subscribe/Subscribe";
 import Navbar from "../../components/Navbar";
@@ -11,6 +12,7 @@ export default function Layout({ children }) {
       <div className="flex place-items-center">{children}</div>
       <Subscribe />
       <Footer />
+      <Toaster richColors />
     </>
   );
 }

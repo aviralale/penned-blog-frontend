@@ -1,23 +1,42 @@
 import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { loginUser } from "../../api/api";
+import { toast } from "sonner";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = (e) => {
     e.preventDefault();
     setIsPasswordVisible(!isPasswordVisible);
   };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const user = {
+      username,
+      password,
+    };
+    try {
+      loginUser(user);
+      toast.success("Logged in successfully!");
+      navigate("/dashboard");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="flex justify-center items-center w-full m-24">
       <div className="flex flex-col items-center">
         <h1 className="text-9xl uppercase ThunderHC text-custom-orange">
           Login
         </h1>
-        <form className="flex m-2  flex-col w-full">
+        <form onSubmit={handleLogin} className="flex m-2  flex-col w-full">
           <div className="flex flex-col mt-2">
             <label htmlFor="username">Enter username</label>
             <input

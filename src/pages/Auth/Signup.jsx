@@ -1,10 +1,11 @@
 import { Eye, EyeClosed } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { registerUser } from "../../api/api";
+import { toast } from "sonner";
 
 export default function Signup() {
   const [username, setUsername] = useState("");
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -20,23 +21,33 @@ export default function Signup() {
     e.preventDefault();
     setIsRePasswordVisible(!isRePasswordVisible);
   };
+
+  const handleRegisterUser = (e) => {
+    e.preventDefault();
+    const user = {
+      username,
+      email,
+      password,
+      re_password: confirmPassword,
+    };
+    try {
+      registerUser(user);
+      toast.success("Registered successfully!");
+    } catch (error) {
+      console.log(error);
+      toast.error("Registration failed!");
+    }
+  };
   return (
     <div className="flex justify-center items-center w-full m-24">
       <div className="flex flex-col items-center">
         <h1 className="text-9xl uppercase ThunderHC text-custom-orange">
           Signup
         </h1>
-        <form className="flex m-2  flex-col w-full">
-          <div className="flex flex-col mt-2">
-            <label htmlFor="displayName">What do you want to be called?</label>
-            <input
-              type="text"
-              placeholder="John Doe"
-              className=" p-2 border border-custom-bg-dark bg-transparent outline-none"
-              required
-              id="displayName"
-            />
-          </div>
+        <form
+          onSubmit={handleRegisterUser}
+          className="flex m-2 flex-col w-full"
+        >
           <div className="flex flex-col mt-2">
             <label htmlFor="username">Enter username (a-z,0-9,_)</label>
             <input
@@ -45,6 +56,8 @@ export default function Signup() {
               className=" p-2 border border-custom-bg-dark bg-transparent outline-none"
               required
               id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="flex flex-col mt-2">
@@ -55,6 +68,8 @@ export default function Signup() {
               className=" p-2 border border-custom-bg-dark bg-transparent outline-none"
               required
               id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="flex flex-col mt-2">

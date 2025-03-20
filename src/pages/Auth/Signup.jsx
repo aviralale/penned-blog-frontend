@@ -119,7 +119,10 @@ export default function Signup() {
           </button>
         </form>
         <p>
-          Already a user? <Link to="/login">Login now!</Link>
+          Already a user?{" "}
+          <Link to="/login" className="text-custom-orange hover:brightness-125">
+            Login now!
+          </Link>
         </p>
       </div>
     </div>

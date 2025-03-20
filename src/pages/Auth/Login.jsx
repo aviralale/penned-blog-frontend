@@ -77,7 +77,13 @@ export default function Login() {
           </button>
         </form>
         <p>
-          New to Penned? <Link to="/signup">Signup now!</Link>
+          New to Penned?{" "}
+          <Link
+            to="/signup"
+            className="text-custom-orange hover:brightness-125"
+          >
+            Signup now!
+          </Link>
         </p>
       </div>
     </div>

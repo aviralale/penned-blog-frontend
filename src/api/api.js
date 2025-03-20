@@ -23,7 +23,7 @@ export const loginUser = async (user) => {
   }
 };
 
-export const patchUser = async (user, token) => {
+export const updateUser = async (user, token) => {
   try {
     const response = await axios.patch(`${API_URL}auth/users/me/`, user, {
       headers: {

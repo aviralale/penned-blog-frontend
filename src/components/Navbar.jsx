@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const today = new Date();
@@ -15,7 +16,9 @@ export default function Navbar() {
     <nav>
       <ul className="p-4 flex justify-between border-b">
         <li className="text-2xl casta uppercase font-bold">{greeting} !</li>
-        <li className="font-bold text-2xl casta">AVIRAL | PENNED</li>
+        <Link className="font-bold text-2xl casta" to="/">
+          AVIRAL | PENNED
+        </Link>
         <li className="font-bold text-2xl casta">{formattedDate}</li>
       </ul>
     </nav>
